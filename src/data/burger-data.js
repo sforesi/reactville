@@ -14,3 +14,4 @@ export const ingredients = [
   { name: 'Cheddar Cheese', color: '#FDE18B', type: 'cheese' },
   { name: 'Swiss Cheese', color: '#F1E1A8', type: 'cheese'},
 ]
+
