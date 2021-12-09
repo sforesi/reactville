@@ -4,11 +4,14 @@ import Ingredient from "./Ingredient"
 const IngredientList = (props) => {
 	return (
 		<ul>
-		{props.stack.map((ingredient, idx) => (
+      {/* //ingredient instead of stack.map */}
+		{props.ingredients.map((ingredient, idx) => (
           <Ingredient
             key={idx}
             idx={idx}
             ingredient={ingredient}
+            isList={true}
+            addToBurger={props.addToBurger}
           />
         ))
       }

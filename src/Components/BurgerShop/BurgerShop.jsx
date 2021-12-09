@@ -1,9 +1,9 @@
 import React from 'react'
 import '../../styles/burger.css'
-import { useState } from 'react'
 import { ingredients } from '../../data/burger-data'
-import  BurgerStack  from './BurgerStack'
-import  IngredientList  from './IngredientList'
+import IngredientList from './IngredientList'
+import BurgerStack  from './BurgerStack'
+import { useState } from 'react'
 
 
 const BurgerShop = () => {
@@ -11,13 +11,15 @@ const BurgerShop = () => {
   
   const [stack, setStack] = useState([])
 
-  const addToBurger = (ingredient) => {
-    setStack([...stack, ingredient])
-  } 
+  const addToBurger = (Ingredient) => {
+    return(
+      setStack([...stack, Ingredient])
+    )
+  }
 
   const removeFromBurger = (idx) => {
     return(
-      setStack(stack.filter((i) => i !== idx))
+      setStack(stack.filter((ingred, i) => i !== idx))
     )
   }
 
@@ -28,13 +30,12 @@ const BurgerShop = () => {
         <button onClick={() => setStack([])}>Clear Order</button>
       </nav>
       <section>
-        < IngredientList 
-          stack={stack} 
+        <IngredientList 
+          ingredients={ingredients}
           addToBurger={addToBurger}
         />
-
-        < BurgerStack
-          ingredients={ingredients}
+        <BurgerStack 
+          ingredients={stack}
           removeFromBurger={removeFromBurger}
         />
       </section>
